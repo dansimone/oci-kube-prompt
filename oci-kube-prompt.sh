@@ -33,6 +33,7 @@ fetch_oci_clusters()
 # TODO - Add support for other vendors here
 fetch_gke_clusters()
 {
+    :
 }
 
 __oci_cluster_name()

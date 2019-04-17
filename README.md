@@ -45,7 +45,7 @@ mappings of cluster OCID -> human readable cluster name.  This can take a minute
 clusters you have:
 
 ```
-fetch_oci_clusters()
+fetch_oci_clusters
 ```
 
 ## Add to your prompt
