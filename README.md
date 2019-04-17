@@ -1,6 +1,6 @@
 # OCI Kube Prompt
 
-<img src="images/oci-kube-prompt.gif" width="500" />
+<img src="images/oci-kube-prompt.gif" width="600" />
 
 The project is a small Bash script that displays the Kubernetes cluster actively set in the environment in the Bash prompt.
 This is currently geared toward [Oracle Container Engine](https://cloud.oracle.com/containers/kubernetes-engine) Kubernetes
