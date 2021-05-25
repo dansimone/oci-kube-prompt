@@ -42,15 +42,12 @@ __oci_cluster_name()
     then
         echo ""
     else
-        server=`cat ${KUBECONFIG} | grep server`
-        if [[ ${server} == *"oci.oraclecloud.com"* ]]; then
-            cluster_short_name=`echo ${server} | awk '{print $2}' | awk -F '.' '{print $1}' | awk -F '//' '{print $2}'`
-            if ls ${CLUSTER_INFO_DIR}/*$cluster_short_name 1> /dev/null 2>&1; then
-                echo "(`cat ${CLUSTER_INFO_DIR}/*${cluster_short_name}`)"
-            else
-                echo "(unknown)"
-            fi
-        # TODO - Add support for other vendors here
+        ocid=`cat ${KUBECONFIG} | grep ocid1.cluster.oc1`
+        ocid=`echo ${ocid} | awk '{print $2}'`
+        if ls ${CLUSTER_INFO_DIR}/*$ocid 1> /dev/null 2>&1; then
+            echo "(`cat ${CLUSTER_INFO_DIR}/*${ocid}`)"
+        else
+            echo "(unknown OKE cluster)"
         fi
     fi
 }
